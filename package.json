@@ -7,18 +7,32 @@
   "author": "happy",
   "license": "MIT",
   "scripts": {
-    "dev": "egg-bin dev",
+    "dev": "EGG_SERVER_ENV=dev egg-bin dev $*",
     "sequelize": "cross-env sequelize $*"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "egg": "^2.23.0",
+    "egg-connector-remote": "^2.0.1",
+    "egg-cors": "^2.2.0",
+    "egg-router-plus": "^1.3.1",
+    "egg-scripts": "^2.11.0",
     "egg-sequelize": "^5.2.0",
+    "egg-validate": "^2.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3"
   },
   "devDependencies": {
+    "autod": "^3.1.0",
+    "autod-egg": "^1.1.0",
     "cross-env": "^6.0.0",
     "egg-bin": "^4.13.0",
+    "egg-ci": "^1.13.0",
+    "egg-mock": "^3.23.2",
+    "eslint": "^6.4.0",
+    "eslint-config-egg": "^7.5.1",
     "sequelize-cli": "^5.5.1"
   }
 }
