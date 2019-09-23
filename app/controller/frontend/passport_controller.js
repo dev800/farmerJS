@@ -7,7 +7,7 @@ class PassportController extends Controller {
 
   async login() {
     const ctx = this.ctx;
-    const value = `<a href="http://www.domain.com">google</a><script>evilcode…</script>`;
+    const value = `<a href="http://www.domain.com">google</a><script>evilcode ~~…</script>`;
 
     await ctx.render('frontend/passport/login.nj', {value});
   }

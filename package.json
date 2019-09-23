@@ -7,8 +7,10 @@
   "author": "happy",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env egg-bin dev $*",
-    "sequelize": "cross-env sequelize $*"
+    "debug": "cross-env egg-bin debug --port 7002 --inpsect=9229 $*",
+    "dev": "cross-env egg-bin dev --port 7002 $*",
+    "sequelize": "cross-env sequelize $*",
+    "test": "egg-bin test"
   },
   "dependencies": {
     "crypto": "^1.0.1",
