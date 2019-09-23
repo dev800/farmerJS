@@ -7,7 +7,7 @@
   "author": "happy",
   "license": "MIT",
   "scripts": {
-    "dev": "EGG_SERVER_ENV=dev egg-bin dev $*",
+    "dev": "cross-env egg-bin dev $*",
     "sequelize": "cross-env sequelize $*"
   },
   "dependencies": {

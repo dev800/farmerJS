@@ -1,7 +1,17 @@
+const path = require('path');
+const sequelizeConfig = require(__dirname + '/../database/config.json')['development'];
+
 module.exports = appInfo => {
   const config = {};
 
   config.keys = 'secret@farmer_eggjs-dev';
+
+  config.logrotator = {
+    filesRotateBySize: [
+      path.join(appInfo.root, 'logs', appInfo.name, 'egg-web.log'),
+    ],
+    maxFileSize: 2 * 1024 * 1024 * 1024,
+  }
 
   config.logger = {
     consoleLevel: 'DEBUG',
@@ -9,15 +19,7 @@ module.exports = appInfo => {
   }
 
   // PostgresSQL
-  config.sequelize = {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "farmer_eggjs_dev",
-    "host": "127.0.0.1",
-    "port": "5432",
-    "dialect": "postgres",
-    "operatorsAliases": false
-  };
+  config.sequelize = sequelizeConfig;
 
   return config;
 };
