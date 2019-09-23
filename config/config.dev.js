@@ -1,8 +1,7 @@
 const path = require('path');
-const sequelizeConfig = require(__dirname + '/../database/config.json')['development'];
 
 module.exports = appInfo => {
-  const config = {};
+  const config = require(__dirname + '/config.default.js');
 
   config.keys = 'secret@farmer_eggjs-dev';
 
@@ -19,7 +18,13 @@ module.exports = appInfo => {
   }
 
   // PostgresSQL
-  config.sequelize = sequelizeConfig;
+  config.sequelize = require(__dirname + '/../database/config.json')['development'];
+
+  config.passportGithub = {
+    ...require(__dirname + '/secret.json')['passportGithub'],
+    callbackURL: '/passport/github/callback',
+    // proxy: false,
+  };
 
   return config;
 };

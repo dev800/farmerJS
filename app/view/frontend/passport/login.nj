@@ -1,0 +1,11 @@
+<h1>{{ __('Please login') }}</h1>
+
+<form method="POST" action="/upload?_csrf={{ ctx.csrf | safe }}" enctype="multipart/form-data">
+  <input type="text" placeholder="{{ __('Please input account') }}"/>
+  <input type="password" placeholder="{{ __('Please input password') }}"/>
+  title: <input name="title" />
+  file: <input name="file" type="file" />
+  <button type="submit">{{ __('Upload') }}</button>
+</form>
+
+{{ value }}
